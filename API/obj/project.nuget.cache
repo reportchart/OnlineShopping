@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "h2OvLK0PsHikXD3APek8+NmZHeEekyPJDbuibIz1PcIT2Dwm+LUYgFKO9TV+Q7wNQhYDxqqVffQiVxUyQ9bjSw==",
+  "dgSpecHash": "zDxkYDy7euHsLRSDTa6msF8YbSoHgJUowSJOZCvXML0o+0o3dT2rnEi5blOexy18PHql8BWd4JeRbWcKTw8rVQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tonysong\\Desktop\\Angular\\TonyShopping\\api\\API.csproj",
+  "projectFilePath": "C:\\Users\\tonysong\\Desktop\\Angular\\TonyShopping\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tonysong\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\tonysong\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

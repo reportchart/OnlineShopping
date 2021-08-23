@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tonysong\\Desktop\\Angular\\TonyShopping\\api\\API.csproj": {}
+    "C:\\Users\\tonysong\\Desktop\\Angular\\TonyShopping\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tonysong\\Desktop\\Angular\\TonyShopping\\api\\API.csproj": {
+    "C:\\Users\\tonysong\\Desktop\\Angular\\TonyShopping\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tonysong\\Desktop\\Angular\\TonyShopping\\api\\API.csproj",
+        "projectUniqueName": "C:\\Users\\tonysong\\Desktop\\Angular\\TonyShopping\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\tonysong\\Desktop\\Angular\\TonyShopping\\api\\API.csproj",
+        "projectPath": "C:\\Users\\tonysong\\Desktop\\Angular\\TonyShopping\\API\\API.csproj",
         "packagesPath": "C:\\Users\\tonysong\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tonysong\\Desktop\\Angular\\TonyShopping\\api\\obj\\",
+        "outputPath": "C:\\Users\\tonysong\\Desktop\\Angular\\TonyShopping\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tonysong\\AppData\\Roaming\\NuGet\\NuGet.Config",
