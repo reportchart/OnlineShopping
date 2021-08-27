@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace Infrastructure.Data
 {
-     public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
+     public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity 
     {
         private readonly StoreContext _context;
         public GenericRepository(StoreContext context)
@@ -19,6 +19,11 @@ namespace Infrastructure.Data
         public void Add(T entity)
         {
            _context.Set<T>().Add(entity);
+        }
+
+        public async Task<int> CountAsync(ISpecification<T> spec)
+        {
+            return await ApplySpecification(spec).CountAsync();
         }
 
         public void Delete(T entity)

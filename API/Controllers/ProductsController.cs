@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using API.Dtos;
 using API.Errors;
+using API.Helpers;
 using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
@@ -38,15 +39,26 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<Product>>> GetProducts()
+        public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts([FromQuery]ProductSpecParams productParams)
         {
             var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             string filePath = @"C:\MyDir\MySubDir\myfile.ext";
             string directoryName;
               directoryName = Path.GetDirectoryName(filePath);
-           var spec= new ProductsWithTypesAndBrandsSpecification();
+
+
+           var spec= new ProductsWithTypesAndBrandsSpecification(productParams);
+
+            var Countspec= new ProductsWithFiltersForCountSpecification(productParams);
+            var Totalcount= await _productRepo.CountAsync(Countspec);
+
            var products = await _productRepo.ListAsync(spec);
-         return Ok(_mapper.Map<IReadOnlyList<Product>,IReadOnlyList<ProductToReturnDto>>(products));
+     
+         // var PageAccount= await _productRepo.CountAsync(spec);
+        var Data = _mapper.Map<IReadOnlyList<Product>,IReadOnlyList<ProductToReturnDto>>(products);
+        var Pagination= new Pagination<ProductToReturnDto>(productParams.PageIndex,productParams.PageSize,Totalcount,Data);
+        // return Ok(_mapper.Map<IReadOnlyList<Product>,IReadOnlyList<ProductToReturnDto>>(products));
+        return Ok(Pagination);
 
         }
 
