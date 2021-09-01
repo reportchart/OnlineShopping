@@ -38,13 +38,17 @@ namespace API
             services.AddControllers();
             services.Configure<ApiBehaviorOptions>(options => 
             options.InvalidModelStateResponseFactory = ActionContext=>{
+
+                var tonyerror= ActionContext.ModelState;
+                
                 var errors =ActionContext.ModelState
                 .Where(e =>e.Value.Errors.Count>0)
                 .SelectMany(x =>x.Value.Errors)
                 .Select(x =>x.ErrorMessage).ToArray();
                 var errorResponse= new ApiValidationErrorResponse
                 {
-                  Errors =errors  
+                  Errors =errors ,
+                 
                 };
                 return new BadRequestObjectResult(errorResponse);
             }

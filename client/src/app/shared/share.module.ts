@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     PaginationModule.forRoot(),
-    FormsModule,
+   FormsModule,
   ],
   exports:[
     PaginationModule,
