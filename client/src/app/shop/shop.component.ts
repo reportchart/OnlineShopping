@@ -13,7 +13,7 @@ import { ShopService } from './shop.service';
 })
 export class ShopComponent implements OnInit {
 
-  @ViewChild('search',{static:true})  serachTerm!: ElementRef
+  @ViewChild('search',{static:false})  serachTerm!: ElementRef
 
   products!:IProduct[];
 
@@ -29,7 +29,10 @@ export class ShopComponent implements OnInit {
   ];
 
   constructor(private shopoService:ShopService)
-   { }
+   {
+
+
+   }
 
   ngOnInit(): void {
 
@@ -53,10 +56,13 @@ export class ShopComponent implements OnInit {
        console.log(error);
       }
     );
+
+
   }
 
   getBrands()
   {
+
     this.shopoService.getBrands().subscribe(
       (response )=>{
         this.brands=[{id:0,name:'All'},...response];
@@ -65,10 +71,13 @@ export class ShopComponent implements OnInit {
        console.log(error);
       }
     );
+
+
   }
 
   getTypes()
   {
+
     this.shopoService.getTypes().subscribe(
       (response )=>{
         this.types=[{id:0,name:'All'},...response];
