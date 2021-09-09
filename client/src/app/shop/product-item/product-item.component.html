@@ -5,7 +5,7 @@
 
 <div class=" d-flex align-items-center justify-content-center hover-overlay mt-2 ">
 
-  <button type="button" class="btn  btn-primary fa fa-shopping-cart me-3 "></button>
+  <button (click)="addItemToBasket()" type="button" class="btn  btn-primary fa fa-shopping-cart me-3 "></button>
   <button routerLink="/shop/{{product.id}}"  type="button" class="btn  btn-primary">View</button>
 
 </div>

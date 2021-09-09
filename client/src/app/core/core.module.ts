@@ -10,9 +10,14 @@ import { SectionHeaderComponent } from './section-header/section-header.componen
 import { BreadcrumbModule } from 'xng-breadcrumb';
 
 
-
 @NgModule({
-  declarations: [NavBarComponent, TestErrorComponent, NotFoundComponent, ServerErrorComponent, SectionHeaderComponent ],
+  declarations: [
+    NavBarComponent,
+     TestErrorComponent,
+     NotFoundComponent,
+      ServerErrorComponent,
+      SectionHeaderComponent
+   ],
   imports: [
     CommonModule,
     ToastrModule.forRoot({
@@ -21,7 +26,6 @@ import { BreadcrumbModule } from 'xng-breadcrumb';
     }),
     BreadcrumbModule,
     RouterModule,
-
   ],
   exports:[
     NavBarComponent,

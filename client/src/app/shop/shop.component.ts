@@ -57,12 +57,10 @@ export class ShopComponent implements OnInit {
       }
     );
 
-
   }
 
   getBrands()
   {
-
     this.shopoService.getBrands().subscribe(
       (response )=>{
         this.brands=[{id:0,name:'All'},...response];
@@ -71,7 +69,6 @@ export class ShopComponent implements OnInit {
        console.log(error);
       }
     );
-
 
   }
 
@@ -105,7 +102,6 @@ export class ShopComponent implements OnInit {
   onSortSelected(sort:string)
   {
     this.shopParams.SortSelected =sort;
-
     this.getProducts();
   }
 
@@ -115,7 +111,6 @@ export class ShopComponent implements OnInit {
     {
       this.shopParams.pageNumber=event
       this.getProducts();
-
     }
 
   }
