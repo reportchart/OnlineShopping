@@ -18,6 +18,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using StackExchange.Redis;
+using Infrastructure.Identity;
+
 
 
 namespace API
@@ -37,6 +39,9 @@ namespace API
          services.AddAutoMapper(typeof(MappingProfiles));      
          services.AddDbContext<StoreContext>(x =>
                 x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
+
+          services.AddDbContext<AppIdentityDbContext>(x =>
+                x.UseSqlite(_config.GetConnectionString("IdentityConnection")));
  
          services.AddSingleton<IConnectionMultiplexer>(c =>
             {
@@ -73,6 +78,7 @@ namespace API
 
               services.AddSwaggerDocumentation();
               services.AddApplicationServices();
+             services.AddIdentityServices(_config);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -93,6 +99,8 @@ namespace API
             app.UseStaticFiles();
 
              app.UseCors("CorsPolicy");
+
+             app.UseAuthentication();
 
             app.UseAuthorization();
 
