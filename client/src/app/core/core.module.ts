@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import { SectionHeaderComponent } from './section-header/section-header.component';
 import { BreadcrumbModule } from 'xng-breadcrumb';
+import { ShareModule } from '../shared/share.module';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { BreadcrumbModule } from 'xng-breadcrumb';
     }),
     BreadcrumbModule,
     RouterModule,
+    ShareModule
   ],
   exports:[
     NavBarComponent,

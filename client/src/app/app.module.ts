@@ -10,11 +10,14 @@ import { HomeModule } from './home/home.module';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,8 @@ import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
     NgxSpinnerModule,
     HttpClientModule,
     CoreModule,
-    HomeModule
+    HomeModule,
+    BsDropdownModule.forRoot()
 
   ],
   providers: [
