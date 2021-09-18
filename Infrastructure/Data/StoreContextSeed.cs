@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Core.Entities;
+using Core.Entities.OrderAggregate;
 using Microsoft.Extensions.Logging;
 
 namespace Infrastructure.Data
@@ -14,7 +15,7 @@ namespace Infrastructure.Data
     {
              public static async Task SeedAsync(StoreContext context, ILoggerFactory loggerFactory)
         {
-             var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            
             try
             {
                 if (!context.ProductBrands.Any())
@@ -51,6 +52,20 @@ namespace Infrastructure.Data
                     foreach (var item in products)
                     {
                         context.Products.Add(item);
+                    }
+
+                    await context.SaveChangesAsync();
+                }
+
+               if (!context.DeliveryMethods.Any())
+                {
+                    // var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                    var dmData = File.ReadAllText(@"../Infrastructure/Data/SeedData/delivery.json");
+                    var methods = JsonSerializer.Deserialize<List<DeliveryMethod>>(dmData);
+
+                    foreach (var item in methods)
+                    {
+                        context.DeliveryMethods.Add(item);
                     }
 
                     await context.SaveChangesAsync();
