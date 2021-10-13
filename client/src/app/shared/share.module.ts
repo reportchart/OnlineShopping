@@ -47,8 +47,6 @@ import { RouterModule } from '@angular/router';
    CdkStepperModule,
    SteeperComponent,
    BasketSummaryComponent,
-
-
   ]
 })
 export class ShareModule { }
