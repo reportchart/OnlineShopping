@@ -26,24 +26,18 @@
       <tr *ngFor=" let item of (basket$ | async)?.items ">
         <td scope="row">
           <div class="p-2">
-
             <img src="{{item.pictureUrl}}" alt="{{item.productName}}" style=" max-height: 50px;"
               class=" img-fluid">
 
             <div class=" ml-3 d-inline-block align-middle">
               <h5 class=" mb-0">
                 <a routerLink="/shop/{{item.id}}" class=" text-dark">{{item.productName}}</a>
-
               </h5>
               <span class=" text-muted  font-weight-mormal font-italic d-inline-block">
-
                 Type: {{item.type}}
               </span>
-
             </div>
           </div>
-
-
         </td>
         <td class=" align-middle"> <strong>{{item.price |currency}}</strong></td>
         <td class=" align-middle">
@@ -57,17 +51,10 @@
       <td class=" align-middle text-center">
       <a class=" text-danger">
         <i *ngIf="isBasket"  (click)="removeBasketItem(item)" class="fa fa-trash" style="font-size: 2em;"></i>
-
       </a>
       </td>
-
       </tr>
-
     </tbody>
-
-
   </table>
-
-
 </div>
 
